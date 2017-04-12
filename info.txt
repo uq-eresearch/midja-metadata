@@ -1,0 +1,77 @@
+GET /organisations
+    retrieve a list of organisations
+::DONE::
+	?sort
+	?sort=asc
+	?sort=desc
+
+POST /organisations
+    create a new organisation with the accompanying json doc
+
+GET /organisations/:org_name
+    retrieve a specific organisation
+::DONE::
+
+PUT /organisations/:org_name
+    update existing organisation (note: entire org json doc supplied)
+
+DELETE /organisations/:org_name
+    delete org_name organisation
+
+GET /organisations/:org_name/datasets
+    retrieve the list of datasets belonging to a specific organisation
+::DONE::
+	?sort
+	?sort=asc
+	?sort=desc
+
+===
+
+GET /datasets
+    retrieve a list of enabled datasets
+::DONE::
+	?sort
+	?sort=asc
+	?sort=desc
+
+GET /datasets?all
+    retrieve a list of datasets, including disabled datasets
+::DONE::
+
+GET /datasets?expanded=true
+    retrieve a list of datasets with embedded list of attributes
+::DONE::
+
+POST /datasets
+    create a new dataset with the accompanying json doc
+
+GET /datasets/:dataset_name
+    retrieve a specific dataset
+::DONE::
+
+GET /datasets/:dataset_name?expanded=true
+    retrieve a specific dataset with embedded list of attributes
+::DONE::
+
+PUT /datasets/:dataset_name
+    update existing dataset (note: entire dataset json doc supplied)
+
+DELETE /datasets/:dataset_name
+    delete dataset_name dataset
+
+GET /datasets/:dataset_name/attributes
+    retrieve the list of attributes for a specific dataset
+
+POST /datasets/:dataset_name/attributes
+    create attributes for a specific dataset
+        create a simgle attribute if one is specified
+        create multiple attributes if an array of attributes is specified?
+
+GET /datasets/:dataset_name/attributes/:attribute_name
+    retrieve a specific attribute from a specific dataset
+
+PUT /datasets/:dataset_name/attributes/:attribute_name
+    update a specific attribute from a specific dataset
+
+DELETE /datasets/:dataset_name/attributes/:attribute_name
+    delete a specific attribute from a specific dataset
